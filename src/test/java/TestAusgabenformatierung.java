@@ -28,7 +28,7 @@ public class TestAusgabenformatierung {
 
     /**
      * Helpermethod to check outputs
-     * @param check
+     * @param check, string to check
      */
     private void CheckTestData(String check) {
         try {

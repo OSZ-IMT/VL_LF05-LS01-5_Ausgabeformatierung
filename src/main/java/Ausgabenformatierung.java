@@ -11,7 +11,7 @@ public class Ausgabenformatierung {
 
     /**
      * Main Methode, die alle anderen Methoden aufruft
-     * @param args
+     * @param args, default
      */
     public static void main(String[] args) {
 
