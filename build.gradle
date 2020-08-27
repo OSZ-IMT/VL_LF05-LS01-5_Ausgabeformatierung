@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'de.oszimt.fi.lf5.trutz'
+group 'de.oszimt.fi.lf5'
 version '1.0'
 
 repositories {

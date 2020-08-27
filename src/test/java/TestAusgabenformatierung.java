@@ -5,8 +5,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestAusgabenformatierung {
 
@@ -27,16 +26,29 @@ public class TestAusgabenformatierung {
         System.setOut(originalOut);
     }
 
+    /**
+     * Helpermethod to check outputs
+     * @param check
+     */
+    private void CheckTestData(String check) {
+        try {
+            assertTrue(bos.toString().contains(check));
+        } catch (Throwable t) {
+            //print exact program
+            assertEquals(check,bos.toString());
+        }
+    }
+
     @Test
     public void testAufgabe1()
     {
 
         // action
-        Ausgabenformatierung.Aufgabe1();
+        Ausgabenformatierung.aufgabe1();
 
         // assertion
         assertTrue(bos.toString().startsWith("   **   "));
-        assertTrue(bos.toString().contains("*      *"));
+        CheckTestData("*      *");
 
     }
 
@@ -45,15 +57,15 @@ public class TestAusgabenformatierung {
     {
 
         // action
-        Ausgabenformatierung.Aufgabe2();
+        Ausgabenformatierung.aufgabe2();
 
         // assertion
-        assertTrue(bos.toString().contains("0!   =                   =   1"));
-        assertTrue(bos.toString().contains("1!   = 1                 =   1"));
-        assertTrue(bos.toString().contains("2!   = 1 * 2             =   2"));
-        assertTrue(bos.toString().contains("3!   = 1 * 2 * 3         =   6"));
-        assertTrue(bos.toString().contains("4!   = 1 * 2 * 3 * 4     =  24"));
-        assertTrue(bos.toString().contains("5!   = 1 * 2 * 3 * 4 * 5 = 120"));
+        CheckTestData("0!   =                   =   1");
+        CheckTestData("1!   = 1                 =   1");
+        CheckTestData("2!   = 1 * 2             =   2");
+        CheckTestData("3!   = 1 * 2 * 3         =   6");
+        CheckTestData("4!   = 1 * 2 * 3 * 4     =  24");
+        CheckTestData("5!   = 1 * 2 * 3 * 4 * 5 = 120");
 
     }
 
@@ -62,27 +74,39 @@ public class TestAusgabenformatierung {
     {
 
         // action
-        Ausgabenformatierung.Aufgabe3();
+        Ausgabenformatierung.aufgabe3();
 
         // assertion
-        assertTrue(bos.toString().contains("Fahrenheit  |  Celsius"));
+        CheckTestData("Fahrenheit  |   Celsius");
+        CheckTestData("-----------------");
 
     }
 
     @Test
-    public void testAufgabe3Table()
+    public void testAufgabe3Neg()
     {
 
         // action
-        Ausgabenformatierung.Aufgabe3();
+        Ausgabenformatierung.aufgabe3();
 
         // assertion
-        assertTrue(bos.toString().contains("----------------------"));
-        assertTrue(bos.toString().contains("-20         |   -28.89"));
-        assertTrue(bos.toString().contains("-10         |   -23.33"));
-        assertTrue(bos.toString().contains("+0          |   -17.78"));
-        assertTrue(bos.toString().contains("20          |    -6.67"));
-        assertTrue(bos.toString().contains("30          |    -1.11"));
+        //CheckTestData("-----------------------");
+        CheckTestData("-20         |    -28,89");
+        CheckTestData("-10         |    -23,33");
+
+    }
+
+    @Test
+    public void testAufgabe3Pos()
+    {
+
+        // action
+        Ausgabenformatierung.aufgabe3();
+
+        // assertion
+        CheckTestData("+0          |    -17,78");
+        CheckTestData("+20         |     -6,67");
+        CheckTestData("+30         |     -1,11");
 
     }
 }

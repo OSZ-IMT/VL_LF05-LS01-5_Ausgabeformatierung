@@ -17,21 +17,21 @@ public class Ausgabenformatierung {
 
         // Aufruf der 3 Methoden
         // Wenn man nur eine Aufgabe ausgeben will, einfach die anderen auskommentieren
-        Aufgabe1();
-        Aufgabe2();
-        Aufgabe3();
+        aufgabe1();
+        aufgabe2();
+        aufgabe3();
     }
 
 
-    public static void Aufgabe1(){
+    public static void aufgabe1(){
 
     }
 
-    public static void Aufgabe2(){
+    public static void aufgabe2(){
 
     }
 
-    public static void Aufgabe3(){
+    public static void aufgabe3(){
 
     }
 }
