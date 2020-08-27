@@ -58,7 +58,7 @@ public class TestAusgabenformatierung {
     }
 
     @Test
-    public void testAufgabe3()
+    public void testAufgabe3Head()
     {
 
         // action
@@ -66,6 +66,17 @@ public class TestAusgabenformatierung {
 
         // assertion
         assertTrue(bos.toString().contains("Fahrenheit  |  Celsius"));
+
+    }
+
+    @Test
+    public void testAufgabe3Table()
+    {
+
+        // action
+        Ausgabenformatierung.Aufgabe3();
+
+        // assertion
         assertTrue(bos.toString().contains("----------------------"));
         assertTrue(bos.toString().contains("-20         |   -28.89"));
         assertTrue(bos.toString().contains("-10         |   -23.33"));
