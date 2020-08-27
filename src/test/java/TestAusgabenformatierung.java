@@ -91,8 +91,8 @@ public class TestAusgabenformatierung {
 
         // assertion
         //CheckTestData("-----------------------");
-        CheckTestData("-20         |    -28,89");
-        CheckTestData("-10         |    -23,33");
+        CheckTestData("-20         |    -28.89");
+        CheckTestData("-10         |    -23.33");
 
     }
 
@@ -104,9 +104,9 @@ public class TestAusgabenformatierung {
         Ausgabenformatierung.aufgabe3();
 
         // assertion
-        CheckTestData("+0          |    -17,78");
-        CheckTestData("+20         |     -6,67");
-        CheckTestData("+30         |     -1,11");
+        CheckTestData("+0          |    -17.78");
+        CheckTestData("+20         |     -6.67");
+        CheckTestData("+30         |     -1.11");
 
     }
 }
