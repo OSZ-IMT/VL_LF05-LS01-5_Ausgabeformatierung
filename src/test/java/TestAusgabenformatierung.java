@@ -47,7 +47,7 @@ public class TestAusgabenformatierung {
         Ausgabenformatierung.aufgabe1();
 
         // assertion
-        assertTrue(bos.toString().startsWith("   **   "));
+        CheckTestData("   **   ");
         CheckTestData("*      *");
 
     }
